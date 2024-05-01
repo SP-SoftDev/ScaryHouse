@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--=============== FAVICON ===============-->
+        <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+        <!--=============== font awesome ICONS ===============-->
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet" href="assets/css/styles.css">
+
+        <title>SP ScaryHouse</title>
+    </head>
+    <body>
+        <!--=============== HEADER =============-->
+        <header class="header" id="header">
+            <nav class="nav container">
+                <a href="#" class="nav__logo">
+                    <span class="button--flex">
+                        <i class="fas fa-hotel button__icon"></i></i> 
+                    </span> <span>  ScaryHouse</span>
+                </a>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="#home" class="nav__link active-link">Home</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#specs" class="nav__link">Events</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#case" class="nav__link">Buy tickets</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#products" class="nav__link">Servises</a>
+                        </li>
+                    </ul>
+
+                    <div class="nav__close" id="nav-close">
+                        <i class="ri-close-line"></i>
+                    </div>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-function-line"></i>
+                </div>
+            </nav>
+        </header>
+
+        <main class="main">
+           
+            <section class="home section" id="home">
+                     <!--=============== HOME ===============-->
+         
+                <div class="home__container container grid">                   
+                    <div>
+                       
+                        <style type="text/css">
+                           
+                            .slide-container{
+                                position: relative;
+                                width: 495px;
+                                height: 350px;
+                                border: 3px solid #f8492a;
+                                
+                                margin-top: 100px;
+                                margin-left: -80px;
+                               
+                    
+                                box-shadow: 0 0 5px #f8492a,0 0 25px #c44620, 0 0 50px #e60536,0 0 20px #f19011;
+                            }
+                            .slide-container .slides{
+                                width: 100%;
+                                height: calc(100% - 40px);
+                                position: relative;
+                                overflow: hidden;
+                            }
+                            .slide-container .slides img{
+                                width: 100%;
+                                height: 100%;
+                                position: absolute;
+                                object-fit: cover;
+                               
+                            }
+                            .slide-container .slides img:not(.active){
+                                top: 0;
+                                left: -100%;
+                            }
+                            span.next, span.prev{
+                                position: absolute;
+                                top: 50%;
+                                transform: translateY(-50%);
+                                padding: 14px;
+                                color: rgb(0, 217, 255);                               
+                                font-size: 24px;
+                                font-weight: bold;
+                                transition: 0.5s;
+                                border-radius: 3px;
+                                user-select: none;
+                                cursor: pointer;
+                                z-index: 1;
+                            }
+                            span.next{
+                                right: 20px;
+                            }
+                            span.prev{
+                                left: 20px;
+                            }
+                            span.next:hover, span.prev:hover{
+                                background-color: #ede6d6;
+                                opacity: 0.8;
+                                color: #00b7ff;
+                            } 
+                            .dotsContainer{
+                                position: absolute;
+                                bottom: 5px;
+                                z-index: 3;
+                                left: 50%;
+                                transform: translateX(-50%);
+                            }
+                            .dotsContainer .dot{
+                                width: 15px;
+                                height: 15px;
+                                margin: 0px 2px;
+                                border: 3px solid rgb(0, 217, 255);
+                                border-radius: 50%;
+                                display: inline-block;
+                                cursor: pointer;
+                                transition: background-color 0.6s ease;
+                            }
+                            .dotsContainer .active{
+                                background-color: orangered;
+                            }
+                    
+                            @keyframes next1{
+                                from{
+                                    left: 0%
+                                }
+                                to{
+                                    left: -100%;
+                                }
+                            }
+                            @keyframes next2{
+                                from{
+                                    left: 100%
+                                }
+                                to{
+                                    left: 0%;
+                                }
+                            }
+                    
+                            @keyframes prev1{
+                                from{
+                                    left: 0%
+                                }
+                                to{
+                                    left: 100%;
+                                }
+                            }
+                            @keyframes prev2{
+                                from{
+                                    left: -100%
+                                }
+                                to{
+                                    left: 0%;
+                                }
+                            }
+                    
+                        </style>
+
+                        <div class="slide-container">
+	
+	                        <div class="slides">
+		                    <img src="./assets/img/pics (12).jpg" class="active">
+		                    <img src="./assets/img/pics (1).jpeg">
+		                    <img src="./assets/img/pics (7).jpg">
+		                    <img src="./assets/img/pics (8).jpg">
+		                    <img src="./assets/img/pics (13).jpg">
+	                        </div>
+
+	                        <div class="buttons">
+	                    	<span class="next">&#10095;</span>
+	                    	<span class="prev">&#10094;</span>
+	                        </div>
+
+	                        <div class="dotsContainer">
+		                    <div class="dot active" attr='0' onclick="switchImage(this)"></div>
+	                    	<div class="dot" attr='1' onclick="switchImage(this)"></div>
+	                    	<div class="dot" attr='2' onclick="switchImage(this)"></div>
+		                    <div class="dot" attr='3' onclick="switchImage(this)"></div>
+	                    	<div class="dot" attr='4' onclick="switchImage(this)"></div>
+	                        </div>
+
+                         </div>
+                         <script type="text/javascript">
+	
+                            // Access the Images
+                            let slideImages = document.querySelectorAll('img');
+                            // Access the next and prev buttons
+                            let next = document.querySelector('.next');
+                            let prev = document.querySelector('.prev');
+                            // Access the indicators
+                            let dots = document.querySelectorAll('.dot');
+                        
+                            var counter = 0;
+                        
+                            // Code for next button
+                            next.addEventListener('click', slideNext);
+                            function slideNext(){
+                            slideImages[counter].style.animation = 'next1 0.5s ease-in forwards';
+                            if(counter >= slideImages.length-1){
+                                counter = 0;
+                            }
+                            else{
+                                counter++;
+                            }
+                            slideImages[counter].style.animation = 'next2 0.5s ease-in forwards';
+                            indicators();
+                            }
+                        
+                            // Code for prev button
+                            prev.addEventListener('click', slidePrev);
+                            function slidePrev(){
+                            slideImages[counter].style.animation = 'prev1 0.5s ease-in forwards';
+                            if(counter == 0){
+                                counter = slideImages.length-1;
+                            }
+                            else{
+                                counter--;
+                            }
+                            slideImages[counter].style.animation = 'prev2 0.5s ease-in forwards';
+                            indicators();
+                            }
+                        
+                            // Auto slideing
+                            function autoSliding(){
+                                deletInterval = setInterval(timer, 3000);
+                                function timer(){
+                                    slideNext();
+                                    indicators();
+                                }
+                            }
+                            autoSliding();
+                        
+                            // Stop auto sliding when mouse is over
+                            const container = document.querySelector('.slide-container');
+                            container.addEventListener('mouseover', function(){
+                                clearInterval(deletInterval);
+                            });
+                        
+                            // Resume sliding when mouse is out
+                            container.addEventListener('mouseout', autoSliding);
+                        
+                            // Add and remove active class from the indicators
+                            function indicators(){
+                                for(i = 0; i < dots.length; i++){
+                                    dots[i].className = dots[i].className.replace(' active', '');
+                                }
+                                dots[counter].className += ' active';
+                            }
+                        
+                            // Add click event to the indicator
+                            function switchImage(currentImage){
+                                currentImage.classList.add('active');
+                                var imageId = currentImage.getAttribute('attr');
+                                if(imageId > counter){
+                                slideImages[counter].style.animation = 'next1 0.5s ease-in forwards';
+                                counter = imageId;
+                                slideImages[counter].style.animation = 'next2 0.5s ease-in forwards';
+                                }
+                                else if(imageId == counter){
+                                    return;
+                                }
+                                else{
+                                slideImages[counter].style.animation = 'prev1 0.5s ease-in forwards';
+                                counter = imageId;
+                                slideImages[counter].style.animation = 'prev2 0.5s ease-in forwards';	
+                                }
+                                indicators();
+                            }
+                        
+                        </script>
+                    </div>
+                    
+                    <div class="home__data">
+                        <div class="home__header">
+                            <h1 class="home__title">Eerie</h1>
+                            <h2 class="home__subtitle">Ecstatic</h2>
+                        </div>
+
+                        <div class="home__footer">
+                            <h3 class="home__title-description">Overview</h3>
+                            <p class="home__description">The Horror House is a terrific spot to spend time with family or friends.If you want to enter after missing the gigantic skulls outside,this operation costs $9 for a horrifying 10 minutes!.
+                            </p>
+                            <a href="#" class="button button--flex">
+                                <span class="button--flex">
+                                    <i class="fa-solid fa-ticket button__icon"></i></i> Buy Tickets
+                                </span>
+                                <span class="home__price">$9</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!--=============== SPONSOR ===============-->
+            <section class="sponsor section">
+                <div class="sponsor__container container grid">
+                    <img src="./assets/img/location ico.png" alt="" class="sponsor__img">
+                    <img src="assets/img/timeivo.png" class="sponsor__img">
+                    <img src="assets/img/callico.png" alt="" class="sponsor__img">
+                    <img src="assets/img/emailico.png" alt="" class="sponsor__img">
+                </div>     
+                <div class="infor">      
+                <p class="locate"><span>LOCATE</span><br>Sample Street</p>
+                <p class="timer"><span>TIME</span><br>10.00 AM - 10.00 PM</p>
+                <p class="call"><span>CONTACT</span><br>+91 93443871XX</p>
+                <p class="mail"><span>EMAIL</span><br>scar@gmail.com</p>
+                </div>  
+            </section> 
+
+            <!--=============== Events ===============-->
+            <section class="specs section grid" id="specs">
+                <h2 class="section__title section__title-gradient">Event Listing</h2>
+
+                <div class="specs__container container grid">
+                    <div class="specs__content grid">
+                        <div class="specs__data">
+                            <i class="fa-solid fa-skull-crossbones specs__icon"></i>
+                            <h3 class="specs__title">ScaryHouse</h3>
+                            <span class="specs__subtitle">Ghostly rooms to <br>escape the clutches <br> of vengeful sprits</span>
+                        </div>
+    
+                        <div class="specs__data">
+                            <i class="fa-solid fa-hat-wizard specs__icon"></i>
+                            <h3 class="specs__title">Horror Party</h3>
+                            <span class="specs__subtitle">Scary decor <br>Spooky music <br>Games & Snacks</span>
+                        </div>
+    
+                        <div class="specs__data">
+                            <i class="fa-solid fa-dragon specs__icon"></i>
+                            <h3 class="specs__title">Dino Walk</h3>
+                            <span class="specs__subtitle">Animatronic Dinosaurs <br>Fossils <br>VR</span>
+                        </div>
+    
+                        <div class="specs__data">
+                            <i class="fa-solid fa-film specs__icon"></i>
+                            <h3 class="specs__title">Horrer Movies</h3>
+                            <span class="specs__subtitle">VR Movies<br> Watch with Family <br>and Friends</span>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <img src="assets/img/skull ima.png" alt="" class="specs__img">
+                    </div>
+                </div>
+            </section>
+
+            <!--=============== Buy Tickets ===============-->
+            <section class="case section grid" id="case">
+                <h2 class="section__title section__title-gradient">Buy Tickets</h2>
+
+                <div class="case__container container grid">
+                    <div>
+                        <img src="assets/img/BuyTickets.png" alt="" class="case__img">
+                    </div>
+
+                    <div class="case__data">
+                        <h3><span>TOP 3 </span>REASONS TO BUY YOUR TICKETS ONLINE!</h3>
+                        <br><b> 
+                        <p class="case__description"><span>SAVE MONEY!</span><br>
+                           On site prices are higher<br><span>SOLD OUT NIGHTS! </span><br>Don't miss your chance! <br><span>COUPON CODES! </span><br>Only valid for online purchases</b>
+                        </p>
+                        <div class="buybut">
+                        <a href="#" class="button button--flex">
+                            <i class="fa-solid fa-ticket"></i> BUY TICKETS NOW <span>$9</span>
+                        </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--=============== store galary ==============-->
+            <section >
+                <h2 class="section__title section__title-gradient">Store Galary</h2>
+<div id="carousel">
+  <figure id="spinner">
+    <img src="./assets/img/hor9.jpg" alt>
+    <img src="./assets/img/hor1.jpg" alt>
+    <img src="./assets/img/hor3.jpg" alt>
+    <img src="./assets/img/hor5.jpg" alt>
+    <img src="./assets/img/hor7.jpg" alt>
+    <img src="./assets/img/hor10.jpg" alt>
+    <img src="./assets/img/hor13.jpg" alt>
+    <img src="./assets/img/hor8.jpg" alt>
+  </figure>
+</div>
+<span style="float:left" class="ss-icon" onclick="galleryspin('-')">&lt;</span>
+<span style="float:right" class="ss-icon" onclick="galleryspin('')">&gt;</span>
+            <!--=============== Sign In ===============-->
+            <h2 class="section__title section__title-gradient">Sign Up</h2>
+            <section class="discount section">
+                <div class="discount__container container grid">
+                    <div class="discount__animate">
+                        <h2 class="discount__title">Mailing list Be in the know!<br>Win stuff! <br><span>Sign up Now!</span></h2>
+                        <p class="discount__description"><b>Sign up to receive coupons, news about special events & the chance to win <span> FREE TICKETS</span></b></p>
+<!--SIGN IN-->
+                        <div class="container">
+                            <div class="card">
+                              <div class="card_title">
+                                <h1>Create Account</h1>
+                                <span>Already have an account? <a href="login">Sign In</a></span>
+                              </div>
+                              <div class="form">
+                              <form action="/register" method="post">
+                                <input type="text" name="username" id="username" placeholder="UserName" />
+                                <input type="email" name="email" placeholder="Email" id="email" />
+                                <input type="password" name="password" placeholder="Password" id="password" />
+                                <button>Sign Up</button>
+                                </form>
+                              </div>
+                              <div class="card_terms">
+                                  <input type="checkbox" name="" id="terms"> <span>I have read and agree to the <a href="">Terms of Service</a></span>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+
+                    <img src="assets/img/float.png" alt="" class="discount__img">
+                </div>
+            </section>
+
+            <!--=============== services ===============-->
+            <section class="products section" id="products">
+                <h2 class="section__title section__title-gradient products__line">
+                    Services
+                </h2>
+                <div class="serv">
+                <h2 class="discount__title"><i>Buy Accessories for Halloween Nights!!</i><br></h2>
+                <p class="discount__description"><b><span> 50% Discount On New Products</span></b></p>
+                </div>
+                <div class="products__container container grid">
+                    <article class="products__card">
+                        <div class="products__content">
+                            <img src="assets/img/pro5.png" alt="" class="products__img">
+    
+                            <h3 class="products__title">Candy Cane <br><p>Candy</p></h3>
+                            <span class="products__price">$7.99</span>
+    
+                            <button class="button button--flex products__button">
+                                <i class="ri-shopping-bag-line button__icon"></i>
+                            </button>
+                        </div>
+                    </article>
+                    <article class="products__card">
+                        <div class="products__content">
+                            <img src="assets/img/pro3.png" alt="" class="products__img">
+    
+                            <h3 class="products__title">Terrifying Crystal Ball</h3>
+                            <span class="products__price">$5.99</span>
+    
+                            <button class="button button--flex products__button">
+                                <i class="ri-shopping-bag-line button__icon"></i>
+                            </button>
+                        </div>
+                    </article>
+                    <article class="products__card">
+                        <div class="products__content">
+                            <img src="assets/img/pro4.png" alt="" class="products__img">
+    
+                            <h3 class="products__title">Pumpkim <br><p>Candy</p></h3>
+                            <span class="products__price">$19.99</span>
+    
+                            <button class="button button--flex products__button">
+                                <i class="ri-shopping-bag-line button__icon"></i>
+                            </button>
+                        </div>
+                    </article>
+                    <article class="products__card">
+                        <div class="products__content">
+                            <img src="assets/img/pro2.png" alt="" class="products__img">
+    
+                            <h3 class="products__title">Halloween Candle <br><p>Accessory</p></h3>
+                            <span class="products__price">$11.99</span>
+    
+                            <button class="button button--flex products__button">
+                                <i class="ri-shopping-bag-line button__icon"></i>
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="products__card">
+                        <div class="products__content">
+                            <img src="assets/img/pro1.png" alt="" class="products__img">
+    
+                            <h3 class="products__title">Witch Hat <br><p>Accesory</p></h3>
+                            <span class="products__price">$4.99</span>
+    
+                            <button class="button button--flex products__button">
+                                <i class="ri-shopping-bag-line button__icon"></i>
+                            </button>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </main>
+<br><br>
+        <h2 class="section__title section__title-gradient products__line">
+            Reach the Adventure!!!
+        </h2> <br>
+        <div class="responsive-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2822.7806761080233!2d-93.29138368446431!3d44.96844997909819!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52b32b6ee2c87c91%3A0xc20dff2748d2bd92!2sWalker+Art+Center!5e0!3m2!1sen!2sus!4v1514524647889" width="200" height="650" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+        <!--=============== FOOTER ===============-->
+        <footer class="footer section">
+            <div class="footer__container container grid">
+                <a href="#" class="footer__logo">               
+                        <span class="button--flex">
+                            <i class="fas fa-hotel button__icon"></i></i> 
+                        </span>                 
+                </a>
+    
+                <div class="footer__content">
+                    <h3 class="footer__title">Products</h3>
+    
+                    <ul class="footer__links">
+                        <li>
+                            <a href="#" class="footer__link">Scary House</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer__link">E-Tickets</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer__link">Discounts</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer__link">Accesories</a>
+                        </li>
+                    </ul>
+                </div>
+    
+                <div class="footer__content">
+                    <h3 class="footer__title">Support</h3>
+    
+                    <ul class="footer__links">
+                        <li>
+                            <a href="#" class="footer__link">Product help</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer__link">Sign In</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer__link">Updates</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer__link">Provides</a>
+                        </li>
+                    </ul>
+                </div>
+    
+                <div class="footer__content">
+                    <form action="" class="footer__form">
+                        <input type="email" placeholder="Email" class="footer__input">
+                        <button class="button button--flex">
+                            <i class="ri-send-plane-line button__icon"></i> Contact
+                        </button>
+                    </form>
+    
+                    <div class="footer__social">
+                        <a href="https://www.facebook.com/share/54R8ofBVVPYcXRZTx/?mibextid=qi20mg" target="_blank" class="footer__social-link">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="https://www.instagram.com/" target="_blank" class="footer__social-link">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                        <a href="www.linkedin.com/in/sathiyapriya-s-22ucs048" target="_blank" class="footer__social-link">
+                            <i class="ri-linkedin-line"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+          
+
+            <p class="footer__copy">Copyright 2024 Created By 
+                <a href="https://sathiyapriya32.github.io/Portfolio-site/" target="_blank" class="footer__copy-link">&#169;  <b>Sathiyapriya S </b> </a>All Rights Reserved.
+
+            </p>
+        </footer>
+
+        <!--=============== SCROLL UP ===============-->
+        <a href="#" class="scrollup" id="scroll-up">
+            <i class="ri-arrow-up-s-line scrollup__icon"></i>
+        </a>
+        
+        <!--=============== SCROLL REVEAL ===============-->
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+        <!--=============== MAIN JS ===============-->
+        <script src="assets/js/main.js"></script>
+
+<script>
+        var angle = 0;
+function galleryspin(sign) { 
+spinner = document.querySelector("#spinner");
+if (!sign) { angle = angle + 45; } else { angle = angle - 45; }
+spinner.setAttribute("style","-webkit-transform: rotateY("+ angle +"deg); -moz-transform: rotateY("+ angle +"deg); transform: rotateY("+ angle +"deg);");
+}</script>
+    </body>
+</html>
